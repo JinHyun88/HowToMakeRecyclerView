@@ -6,42 +6,38 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.Toast
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.example.howtomakerecyclerview.databinding.ActivityMainBinding
 import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var recyclerView : RecyclerView
-    private lateinit var addBtn : Button
+    private lateinit var binding : ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        //view 설정
-        recyclerView = findViewById(R.id.recycler)
-        addBtn = findViewById(R.id.addBtn)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
 
         //array설정
         val list : ArrayList<Data> = ArrayList()
 
-
         //adapter 설정
-        recyclerView.adapter = MainAdapter(list){ data, position ->
+        binding.recycler.adapter = MainAdapter(list){
+                data, position ->
             Toast.makeText(this, "아이템이 삭제됨", Toast.LENGTH_SHORT).show()
             list.remove(data)
-            recyclerView.adapter!!.notifyItemRemoved(position)
+            binding.recycler.adapter!!.notifyItemRemoved(position)
         }
 
-
-        //버튼을 눌렀을 때 아이템 추가
-        addBtn.setOnClickListener {
+        binding.addBtn.setOnClickListener {
             val randomInt = Random.nextInt(100).toString()
             Log.d(TAG, "onCreate: random : $randomInt")
             list.add(
                 Data("학생", R.drawable.ic_launcher_foreground, randomInt)
             )
-            recyclerView.adapter!!.notifyItemInserted(list.size.minus(1))
+            binding.recycler.adapter!!.notifyItemInserted(list.size.minus(1))
         }
+
     }
 
 }
