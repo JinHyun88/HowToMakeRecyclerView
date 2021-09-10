@@ -7,9 +7,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.howtomakerecyclerview.databinding.ActivityMainBinding
 import com.example.howtomakerecyclerview.databinding.ActivityMainBinding
 import kotlin.random.Random
 
