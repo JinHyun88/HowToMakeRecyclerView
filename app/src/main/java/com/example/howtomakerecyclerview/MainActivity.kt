@@ -7,7 +7,9 @@ import android.util.Log
 import android.widget.Button
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.example.howtomakerecyclerview.databinding.ActivityMainBinding
 import com.example.howtomakerecyclerview.databinding.ActivityMainBinding
 import kotlin.random.Random
 
@@ -18,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
 
+        //
         //array설정
         val list : ArrayList<Data> = ArrayList()
 

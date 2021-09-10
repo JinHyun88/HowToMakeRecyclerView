@@ -38,5 +38,4 @@
             app:layout_constraintStart_toEndOf="@+id/rankText"
             app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</layout>
+</androidx.constraintlayout.widget.ConstraintLayout>
